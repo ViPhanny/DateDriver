@@ -1,0 +1,66 @@
+import java.util.*;
+
+public class DateAD {
+    public static final int LOWEST_YEAR = 1756;
+    public static final int HIGHEST_YEAR = 9999;
+    public static final int STARTING_DAY = 1; //January 1 of 1756 was a Thursday
+    public static final int MONTHS_IN_A_YEAR = 12;
+    public static final String[] MONTH_NAMES = {"January", "February", "March",
+        "April", "May", "June", "July", "August", "October", 
+        "November", "December"};
+   public static final String[] DAYS_OF_WEEK_NAMES = {"Sunday", "Monday", 
+        "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+   private short year = 1756;
+   private short month;
+   private short dayOfMonth;
+   private short dayOfYear;
+   private short dayOfWeek;
+   
+   public static boolean isLeapYear(short year)
+   {
+       boolean returnValue = false;
+       if (year % 4 == 0)
+       {
+           returnValue = true;
+           if (year % 100 == 0)
+           {
+               returnValue = false;
+               if (year % 400 == 0)
+               {
+                   returnValue = true;
+               }
+               
+           }
+           
+       } 
+       return returnValue;
+   }
+   public DateAD getYesterday()
+   {
+       return new DateAD();
+   }
+   
+   public DateAD getTomorrow()
+   {
+       return new DateAD();
+   }
+   
+   @override Object.toString();
+   public String toString()
+   {
+       String output = dayOfWeek + dayOfMonth + month + year;
+       return output;
+   }
+   public void setCurrantDate()
+   {
+    GregorianCalendar cal = new GregorianCalendar();
+    month = (short)cal.get(GregorianCalendar.MONTH);
+    year = (short)cal.get(GregorianCalendar.YEAR);
+    dayOfMonth = (short)cal.get(GregorianCalendar.DAY_OF_MONTH);
+   }
+   
+   }
+    
+    
+    
+}
